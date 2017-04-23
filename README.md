@@ -1,5 +1,6 @@
 # README
-# Written by The Anh
+# Github source: https://github.com/andretom1/appdev2017
+# Written by Dr.Chao Gao and Tran Thanh Long
 # This project is written for Linux OS
 
 OVERVIEW:
@@ -56,19 +57,19 @@ OVERVIEW:
 
 2. Installation instruction:
 
-	a) Download all the source from my GitHub: https://github.com/e1601118/APPDEV and store in ONE directory
-	b) Open Terminal Windows on Linux and change directory to your folder containing all the source code
+	a) Download all the source from my GitHub: https://github.com/e1601113/appdev2017 and store in ONE directory
+	b) Open Terminal Windows on Linux and change directory to the folder containing all the source code
 	c) Type "make" to compile and link all the source code
 	d) Change your terminal to UTF-8
 
 3. Opertating instruction:
 
 	a) Run "./sound.a" to run the program. You will see a screen with many vertical bars and information of 
-		duration, bits per sample, and sample rate
+		duration, bits per sample, and sample rate. Also the decibels value is written in the sound.log. You can find the file here: https://www.cc.puv.fi/~e1601113/appdev2017/
 
 	b) View in DEBUG mode, where you can see the file WAV header: go to "wave.h" and add line "#define DEBUG"
 	c) View in COMM  mode, where your program will send the record information to the server: go to "comm.h" and add line "#define COMM"
-	d) To view the visualization, go to: https://www.cc.puv.fi/~e1601118/php/realtime.php
+	d) To view the visualization, go to: https://www.cc.puv.fi/~e1601113/appdev2017/audio.php. The visualization is real-time, so you should be able to view it like what you see in the terminal.
 	e) To stop the program: press Crtl+C or Crtl+Z
 
 4. Files include in this project:
@@ -78,10 +79,10 @@ OVERVIEW:
 	This is a open source project. No coppyright and licensing
 
 6. Contact information for the distributor or programmer:
-	Name: 	Nguyen The Anh
-	Phone:  +358 469 518 740
-	Email:  e1601118@edu.vamk.fi
+	Name:	Tran Thanh Long
+	Phone:  +358 469 513 657
+	Email:  e1601113@edu.vamk.fi or thanhlong130298@gmail.com
 	
 7. Credit and acknowledgement:
-	This project is made by following the instruction of Doctor Gao Chao, supervisor of Application Development course, VAMK.
+	This project is made by following the instruction of Dr.Gao Chao, supervisor of Application Development course, VAMK.
 # test

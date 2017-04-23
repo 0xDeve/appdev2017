@@ -96,7 +96,7 @@ void displayWAVdata(short int d[])
 	double sum200, rms200, max200=0.0, min200=30000.0;	//Cal RMS200
 	double Leqf[8], sum2000 = 0.0;				//Cal RMS2000 (fast Leq values)
 
-	for (i=0;i<=80-2;i++) //Terminal has 80 columns
+	for (i=0;i<=80;i++) //Terminal has 80 columns
 	{
 		sum200=0.0; //Initialize the accumulator
 		for (j=0;j<=SAMPLE_RATE/80;j++)
