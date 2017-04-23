@@ -72,17 +72,21 @@ OVERVIEW:
 	d) To view the visualization, go to: https://www.cc.puv.fi/~e1601113/appdev2017/audio.php. The visualization is real-time, so you should be able to view it like what you see in the terminal.
 	e) To stop the program: press Crtl+C or Crtl+Z
 
-4. Files include in this project:
+4. Brief explain on how the visualization works:
+	a) Using libcurl library, the sensor sends the data ( 8 decibel values ) every second to the server.
+	b) Raspsum.php is the file that will get the data and write it to 2 files : sound.log ( stores all the values ) and sound2.log ( only stores 1 value every second).
+	c) Then the "audio.php" file will read the sound2.log and draw the column graph as visualization. The graph changes as the data changes. 
+5. Files include in this project:
 	main.c	wave.c	wave.h	comm.h	comm.c	screen.h  screen.c  makefile README.md
 
-5. Coppyright and licensing information:
+6. Coppyright and licensing information:
 	This is a open source project. No coppyright and licensing
 
-6. Contact information for the distributor or programmer:
+7. Contact information for the distributor or programmer:
 	Name:	Tran Thanh Long
 	Phone:  +358 469 513 657
 	Email:  e1601113@edu.vamk.fi or thanhlong130298@gmail.com
 	
-7. Credit and acknowledgement:
+8. Credit and acknowledgement:
 	This project is made by following the instruction of Dr.Gao Chao, supervisor of Application Development course, VAMK.
-# test
+
