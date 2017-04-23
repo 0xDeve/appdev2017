@@ -10,8 +10,7 @@
 //this program will open a wave file, a display WAV header info
 //this program will create a wave file
 
-void testTone(int freq, double d)
-{
+void testTone(int freq, double d){
 	FILE *fp;
 	int i;
 	WAVHDR h;
@@ -31,8 +30,7 @@ void testTone(int freq, double d)
 	h.ChunkSize = h.Subchunk2Size + 36;
 	fwrite(&h,sizeof(h),1,fp);
 	int sample;
-	for (i=0;i<=d*SAMPLE_RATE;i++)
-	{
+	for (i=0;i<=d*SAMPLE_RATE;i++){
 		srand(time(NULL));
 		sample = (i-32768-i*i/1000)*rand() * sin(2*PI*freq*i/SAMPLE_RATE);
 		fwrite(&sample, sizeof(sample),1,fp);
@@ -42,14 +40,12 @@ void testTone(int freq, double d)
 	fclose(fp);
 }
 
-void fillID(const char *s, char d[])
-{
+void fillID(const char *s, char d[]){
 	int i;
 	for (i=0;i<4;i++) d[i]=*s++;
 }
 
-void displayWAVHDR(WAVHDR hdr)
-{
+void displayWAVHDR(WAVHDR hdr){
 	double Duration;
 	Duration = (double)hdr.Subchunk2Size/hdr.ByteRate;
 #ifdef DEBUG
@@ -78,8 +74,7 @@ void displayWAVHDR(WAVHDR hdr)
 #endif
 }
 
-void printID(char id[])
-{
+void printID(char id[]){
 	int i;
 	for (i=0;i<4;i++) putchar(id[i]);
 	printf("\n");
@@ -89,24 +84,19 @@ void printID(char id[])
 //However, only 8 pieces of RMS data are sent to the server as Fast Mode
 // of Sound Level Meter (SLM)
 
-void displayWAVdata(short int d[])
-{
-//	system("clear");
+void displayWAVdata(short int d[]){
 	int i,j;
-	double sum200, rms200, max200=0.0, min200=30000.0;	//Cal RMS200
+	double sum200, rms200, max200=0.0, min200=20000.0;	//Cal RMS200
 	double Leqf[8], sum2000 = 0.0;				//Cal RMS2000 (fast Leq values)
 
-	for (i=0;i<=80;i++) //Terminal has 80 columns
-	{
+	for (i=0;i<80;i++){ //Terminal has 80 columns
 		sum200=0.0; //Initialize the accumulator
-		for (j=0;j<=SAMPLE_RATE/80;j++)
-		{
+		for (j=0;j<=SAMPLE_RATE/80;j++){
 			sum200 += (*d)*(*d);
 			d++;			//treat d as a pointer, pointer increament
 		}
 		sum2000+=sum200;
-		if (i%10==9)
-		{
+		if (i%10==0){
 			Leqf[i/10]=sqrt(sum2000/SAMPLE_RATE/8);
 			sum2000 = 0.0;	//reset sum2000
 		}

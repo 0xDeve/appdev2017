@@ -2,8 +2,7 @@
  * It also contains necessary constant definitions, and function
  * prototypes used in this project */
 
-typedef struct
-{
+typedef struct{
 	char ChunkID[4];
 	int  ChunkSize;
 	char Format[4];

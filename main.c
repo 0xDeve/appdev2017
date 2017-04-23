@@ -11,8 +11,7 @@
 //this program will open a wave file, a display WAV header info
 //this program will create a wave file
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]){
 	FILE *fp;
 	WAVHDR myhdr;
 	int ret;
@@ -29,8 +28,7 @@ int main(int argc, char *argv[])
 		return -1;
 	}
 */
-	for (;;)
-	{
+	for (;;){
 		ret = system("arecord -r16000 -c1 -d1 -f S16_LE -q data.wav");
 		clearScreen(); //a fresh screen to display
 		if (WIFSIGNALED(ret) && (WTERMSIG(ret)==SIGINT || WTERMSIG(ret)==SIGQUIT)) break;

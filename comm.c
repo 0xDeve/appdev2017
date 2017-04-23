@@ -3,14 +3,12 @@
 #include <curl/curl.h>
 #include <string.h>
 
-void send_data_curl(double Leq[])
-{
+void send_data_curl(double Leq[]){
 	char postdata[200]="data=", temp[30];
 	int i;
 	CURL *curl;
 	CURLcode res;
-	for (i=0; i<8; i++)
-	{
+	for (i=0; i<8; i++){
 		sprintf(temp,(i==7)?"%.2f":"%.2f,", Leq[i]);	//Write temp as format
 		strcat(postdata,temp);		//Append temp to postdata
 	}
@@ -18,8 +16,7 @@ void send_data_curl(double Leq[])
 	curl_global_init(CURL_GLOBAL_ALL);
 
         curl = curl_easy_init();
-        if(curl)
-        {
+        if(curl){
                 curl_easy_setopt(curl,CURLOPT_URL, URL);
                 curl_easy_setopt(curl,CURLOPT_POSTFIELDS, postdata);
                 res = curl_easy_perform(curl);
